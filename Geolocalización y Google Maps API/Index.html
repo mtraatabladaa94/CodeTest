@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <button onclick="findMe()">Localizarme</button>
+        <div id="map">
+
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBX0x-VMGLq-oyW0Hr20FG7JtJhLBeVoo8"></script>
+        <script type="text/javascript">
+            function findMe() {
+                var output = document.getElementById("map");
+
+                if(navigator.geolocation) {
+
+                }
+                else {
+
+                }
+
+                function localization(posicion) {
+                    var latitude = posicion.coords.latitude;
+                    var longitude = posicion.coords.longitude;
+
+                    var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&size=640x400&markers=color:red%7C" + latitude + "," + longitude +"&key=AIzaSyBX0x-VMGLq-oyW0Hr20FG7JtJhLBeVoo8";
+
+                    output.innerHTML = "<img src='" + imgURL + "' />";
+                }
+                function error() {
+                    output.innerHTML = "<p>Error</p>";
+                }
+
+                navigator.geolocation.getCurrentPosition(localization, error);
+            }
+        </script>
+    </body>
+</html>
