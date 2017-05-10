@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <metacharset="utf-8">
+    <title>Transformacion punto de origen</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+      }
+      .container {
+        border: 1px solid red;
+        width: 100%;
+      }
+      .cuadrado {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: #7dc900;
+        margin: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        transition: 300ms;
+        animation-name: cuadrado, rebote;
+        animation-duration: 2s, 0.4s;
+        animation-iteration-count: infinite, 10;
+        animation-timing-function: linear, ease-out, linear;
+        animation-direction: alternate;
+      }
+      @keyframes cuadrado {
+        0% {
+          /*opacity: 1;*/
+          left: 0;
+        }
+        100% {
+          /*opacity: 0;*/
+          left: calc(100% - 240px);
+        }
+      }
+      @keyframes rebote {
+        /*0%*/
+        from{
+          transform: translateY(0) scale(1.1, 0.9);
+        }
+        /*100%*/
+        to {
+          transform: translateY(-100px) scale(1);
+        }
+      }
+      @keyframes escalera {
+        from {
+          bottom: 0;
+        }
+        to {
+          bottom: 400px;
+        }
+      }
+      .container:hover.cuadrado {
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body>
+    <divclass="container">
+      <divid="cuadrado"class="cuadrado">
+        Hola Mundo!
+      </div>
+    </div>
+    <script>
+      const $el = document.getElementById('cuadrado')
+      let done = false
+      $el.addEventListener('animationend', (event) => {
+        console.log(event);
+        if (event.animationName === 'rebote' && !done) {
+          done = true
+          $el.style.animationName = 'cuadrado, rebote, escalera'
+          $el.style.animationDuration = '2s, .4s, 2s'
+          $el.style.animationIterationCount = 'infinite, infinite, 2'
+        }
+      })
+    </script>
+  </body>
+</html>
