@@ -1,0 +1,43 @@
+﻿@model AppWeb.Models.ProductoEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ProductoEntity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductoID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductoID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoriaEntity.Nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoriaEntity.Nombre)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
