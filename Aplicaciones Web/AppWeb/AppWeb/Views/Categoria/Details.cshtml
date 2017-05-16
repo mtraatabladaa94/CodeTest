@@ -1,13 +1,13 @@
 ﻿@model AppWeb.Models.CategoriaEntity
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<h2>Detalle de Categoria</h2>
 
 <fieldset>
-    <legend>CategoriaEntity</legend>
+    <legend>Datos</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.CategoriaID)
@@ -24,6 +24,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id=Model.CategoriaID }) |
+    @Html.ActionLink("Volver a categorias", "Index")
 </p>

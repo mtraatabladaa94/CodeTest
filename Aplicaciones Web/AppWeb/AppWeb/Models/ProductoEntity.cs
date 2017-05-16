@@ -18,12 +18,14 @@ namespace AppWeb.Models
 
         public string Descripcion { get; set; }
 
+        [Display(Name= "Categoria")]
         public int CategoriaID { get; set; }
 
     }
 
     public partial class ProductoEntity
     {
+        [Display(Name = "Categoria")]
         public virtual CategoriaEntity CategoriaEntity { get; set; }
     }
 

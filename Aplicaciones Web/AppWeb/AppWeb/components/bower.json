@@ -1,0 +1,25 @@
+{
+  "name": "AppWeb",
+  "homepage": "https://github.com/mtraatabladaa94/CodeTest",
+  "authors": [
+    "Nancy Jael Barba <nancy@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "keywords": [
+    "app",
+    "web",
+    "html5",
+    "css3",
+    "bower"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

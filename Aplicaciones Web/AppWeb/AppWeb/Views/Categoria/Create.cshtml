@@ -4,22 +4,14 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crear Categoria</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>CategoriaEntity</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CategoriaID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CategoriaID)
-            @Html.ValidationMessageFor(model => model.CategoriaID)
-        </div>
+        <legend>Datos</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nombre)
@@ -30,13 +22,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Guardar" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a categorias", "Index")
 </div>
 
 @section Scripts {

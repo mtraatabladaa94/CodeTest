@@ -13,13 +13,7 @@
     <fieldset>
         <legend>ProductoEntity</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ProductoID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ProductoID)
-            @Html.ValidationMessageFor(model => model.ProductoID)
-        </div>
+        @Html.HiddenFor(model => model.ProductoID);
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nombre)

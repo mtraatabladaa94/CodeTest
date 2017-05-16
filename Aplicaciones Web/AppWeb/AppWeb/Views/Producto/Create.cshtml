@@ -4,22 +4,14 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crear Productos</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>ProductoEntity</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.ProductoID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.ProductoID)
-            @Html.ValidationMessageFor(model => model.ProductoID)
-        </div>
+        <legend>Datos</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Nombre)
@@ -38,7 +30,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CategoriaID, "CategoriaEntity")
+            @Html.LabelFor(model => model.CategoriaID, "Categoria")
         </div>
         <div class="editor-field">
             @Html.DropDownList("CategoriaID", String.Empty)
@@ -52,7 +44,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver a productos", "Index")
 </div>
 
 @section Scripts {

@@ -11,9 +11,10 @@ namespace AppWeb.Models
 {
     public partial class CategoriaEntity
     {
-        
+
         public int CategoriaID { get; set; }
 
+        [Display(Name= "Categoria")]
         public string Nombre { get; set; }
 
     }
@@ -30,6 +31,8 @@ namespace AppWeb.Models
             ToTable("tblCategorias");
 
             HasKey(c=> c.CategoriaID);
+            Property(c => c.CategoriaID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             Property(c => c.Nombre)
                 .IsRequired()
