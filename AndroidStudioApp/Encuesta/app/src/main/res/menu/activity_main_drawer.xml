@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <group
+        android:checkableBehavior="single"
+        >
+        <!--<item android:title="Gestión">
+            <menu>
+                <item
+                    android:id="@+id/navFavorite"
+                    android:icon="@drawable/ic_menu_slideshow"
+                    android:title="Favoritos" />
+                <item
+                    android:id="@+id/navSurvey"
+                    android:icon="@drawable/ic_menu_manage"
+                    android:title="Encuestas" />
+            </menu>
+        </item>-->
+        <item
+            android:id="@+id/navFavorite"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Favoritos" />
+        <item
+            android:id="@+id/navSurvey"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Encuestas" />
+    </group>
+
+    <item android:title="Información">
+        <menu>
+            <item
+                android:id="@+id/navCategory"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Categorias" />
+            <item
+                android:id="@+id/navLabel"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Etiquetas" />
+        </menu>
+    </item>
+
+    <item android:title="Configuracón">
+        <menu>
+            <item
+                android:id="@+id/navExport"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Exportar" />
+            <item
+                android:id="@+id/navShare"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+        </menu>
+    </item>
+
+</menu>
