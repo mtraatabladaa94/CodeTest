@@ -26,10 +26,8 @@ public class ModelDb extends OrmLiteSqliteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    private Dao<label, Integer> labelDao;
     private Dao<category, Integer> categoryDao;
     private Dao<survey, Integer> surveyDao;
-    private Dao<labelInSurvey, Integer> labelInSurveyDao;
     private Dao<questionOfSurvey, Integer> questionOfSurveyDao;
     private Dao<answer, Integer> answerDao;
     private Dao<answerOfUser, Integer> answerOfUserDao;
@@ -37,10 +35,8 @@ public class ModelDb extends OrmLiteSqliteOpenHelper {
     @Override
     public void close() {
         super.close();
-        this.labelDao = null;
         this.categoryDao = null;
         this.surveyDao = null;
-        this.labelInSurveyDao = null;
         this.questionOfSurveyDao = null;
         this.answerDao = null;
         this.answerOfUserDao = null;
@@ -49,10 +45,8 @@ public class ModelDb extends OrmLiteSqliteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase, ConnectionSource connectionSource) {
         try {
-            TableUtils.createTable(connectionSource, label.class);
             TableUtils.createTable(connectionSource, category.class);
             TableUtils.createTable(connectionSource, survey.class);
-            TableUtils.createTable(connectionSource, labelInSurvey.class);
             TableUtils.createTable(connectionSource, questionOfSurvey.class);
             TableUtils.createTable(connectionSource, answer.class);
             TableUtils.createTable(connectionSource, answerOfUser.class);
@@ -68,13 +62,6 @@ public class ModelDb extends OrmLiteSqliteOpenHelper {
     }
 
     //Retornando listado de datos
-    public Dao<label, Integer> getLabelDao() throws SQLException {
-        if(this.labelDao == null) {
-            this.labelDao = this.getDao(label.class);
-        }
-        return labelDao;
-    }
-
     public Dao<category, Integer> getCategoryDao() throws SQLException {
         if(this.categoryDao == null) {
             this.categoryDao = this.getDao(category.class);
@@ -87,13 +74,6 @@ public class ModelDb extends OrmLiteSqliteOpenHelper {
             this.surveyDao = this.getDao(survey.class);
         }
         return surveyDao;
-    }
-
-    public Dao<labelInSurvey, Integer> getLabelInSurveyDao() throws SQLException {
-        if(this.labelInSurveyDao == null) {
-            this.labelInSurveyDao = this.getDao(labelInSurvey.class);
-        }
-        return labelInSurveyDao;
     }
 
     public Dao<questionOfSurvey, Integer> getQuestionOfSurveyDao() throws SQLException {

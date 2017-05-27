@@ -63,7 +63,7 @@ public class mainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        this.showFragmentSurvey();
+        //this.showFragmentSurvey();
     }
 
     @Override

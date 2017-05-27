@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.teamsadara.encuesta.R;
 
@@ -27,7 +28,7 @@ public class listSurveyFragment extends Fragment {
     android.support.v7.widget.RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layout;
-    ArrayList<surveyDataProvider> arrayList;
+    ArrayList<surveyDataProvider> arrayList = new ArrayList<surveyDataProvider>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,8 +79,14 @@ public class listSurveyFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list_survey, container, false);
 
         //AQUI VA EL CODIGO DEL DISEÑO
-        this.recyclerView = (RecyclerView)view.findViewById(R.id.rcvSurveysList);
-        this.LoadData();
+        try {
+            this.recyclerView = (RecyclerView)view.findViewById(R.id.rcvSurveyList);
+            this.LoadData();
+            Toast.makeText(this.getActivity(), "Hello Michael", Toast.LENGTH_LONG).show();
+        }
+        catch(Exception ex) {
+            Toast.makeText(this.getActivity(), "Error: " + ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
         return view;
     }
