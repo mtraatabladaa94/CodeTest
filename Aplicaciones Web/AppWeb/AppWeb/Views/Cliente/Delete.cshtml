@@ -1,0 +1,76 @@
+﻿@model AppWeb.Models.ClienteEntity
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Categoria</h2>
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+
+        <fieldset>
+            <legend>Estas seguro que deseas eliminar este cliente?</legend>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.ClienteID)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.ClienteID)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Cedula)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Cedula)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Nombres)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Nombres)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Apellidos)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Apellidos)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Email)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Telefono)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Telefono)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Direccion)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Direccion)
+            </div>
+        </fieldset>
+        <br />
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="Eliminar" class="btn btn-danger" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+            </p>
+        }
+
+    </div>
+
+</div>

@@ -42,7 +42,8 @@ namespace AppWeb.Models
             this.ToTable("tblVentasDetalles");
 
             HasKey(c => c.DetalleVentaID);
-            Property(c => c.DetalleVentaID);
+            Property(c => c.DetalleVentaID)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
 }

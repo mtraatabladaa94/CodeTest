@@ -13,7 +13,7 @@ namespace AppWeb.Models
     public partial class ClienteEntity
     {
 
-        [Display(Name = "Nº Cliente")]
+        [Display(Name = "Nº")]
         public int ClienteID { get; set; }
          
         [Display(Name = "Cédula")]
@@ -42,7 +42,7 @@ namespace AppWeb.Models
         {
             //this.Productos = new HashSet<ProductoEntity>();
         }
-        public virtual ObservableCollection<VentaEntity> Ventas { get; set; }
+        public virtual ICollection<VentaEntity> Ventas { get; set; }
     }
 
     public class ClienteEntityMapping : EntityTypeConfiguration<ClienteEntity>

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AppWeb.Models.UsuarioEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+
+        <p>
+            @Html.ActionLink("Crear nuevo", "Create", null, new { @class = "btn btn-danger" })
+        </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.UsuarioID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NombreUsuario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contraseña)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rol)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UsuarioID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contraseña)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rol)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+        </table>
+
+
+    </div>
+
+</div>

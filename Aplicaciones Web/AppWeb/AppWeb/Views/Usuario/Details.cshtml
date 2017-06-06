@@ -1,0 +1,43 @@
+﻿@model AppWeb.Models.UsuarioEntity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UsuarioEntity</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UsuarioID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsuarioID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NombreUsuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NombreUsuario)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contraseña)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contraseña)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rol)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rol)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

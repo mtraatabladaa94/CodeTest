@@ -6,28 +6,36 @@
 
 <h2>Delete</h2>
 
-<h3>Estas seguro que deseas eliminar esto?</h3>
-<fieldset>
-    <legend>Categoria</legend>
+<div class="panel panel-default">
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CategoriaID)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CategoriaID)
+    <div class="panel-body">
+
+        <fieldset>
+            <legend>Estas seguro que deseas eliminar esto?</legend>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.CategoriaID)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.CategoriaID)
+            </div>
+
+            <div class="display-label">
+                 @Html.DisplayNameFor(model => model.Nombre)
+            </div>
+            <div class="display-field">
+                @Html.DisplayFor(model => model.Nombre)
+            </div>
+        </fieldset>
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            <p>
+                <input type="submit" value="Eliminar" class="btn btn-danger" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+            </p>
+        }
+
+
     </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Nombre)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Nombre)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Eliminar" /> |
-        @Html.ActionLink("Volver a categorias", "Index")
-    </p>
-}
+</div>

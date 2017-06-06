@@ -26,7 +26,7 @@ namespace AppWeb.Models
         {
             //this.Productos = new HashSet<ProductoEntity>();
         }
-        public virtual ObservableCollection<ProductoEntity> Productos { get; set; }
+        public virtual ICollection<ProductoEntity> Productos { get; set; }
     }
 
     public class CategoriaEntityMapping : EntityTypeConfiguration<CategoriaEntity>

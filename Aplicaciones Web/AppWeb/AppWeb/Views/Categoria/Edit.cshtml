@@ -6,31 +6,42 @@
 
 <h2>Editar Categoria</h2>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+<div class="panel panel-default">
 
-    <fieldset>
-        <legend>Datos</legend>
-        @Html.HiddenFor(model => model.CategoriaID)
+    <div class="panel-body">
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Nombre)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Nombre)
-            @Html.ValidationMessageFor(model => model.Nombre)
-        </div>
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-        <p>
-            <input type="submit" value="Guardar" />
-        </p>
-    </fieldset>
-}
+            <fieldset>
+                <legend>Datos</legend>
+                @Html.HiddenFor(model => model.CategoriaID)
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                @Html.LabelFor(model => model.Nombre)
+                            </span>
+                            @Html.TextBoxFor(model => model.Nombre, new { @class = "form-control", placeholder = "Nombre de la categoria" })
+                            @Html.ValidationMessageFor(model => model.Nombre)
+                        </div>
+                    </div>
+                </div>
 
-<div>
-    @Html.ActionLink("Volver a categorias", "Index")
+                <br />
+
+                <p>
+                    <input type="submit" value="Editar" class="btn btn-danger" />
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                </p>
+            </fieldset>
+        }
+
+    </div>
+
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

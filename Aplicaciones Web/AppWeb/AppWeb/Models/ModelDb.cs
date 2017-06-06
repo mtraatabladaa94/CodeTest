@@ -42,9 +42,11 @@ namespace AppWeb.Models
             modelBuilder.Configurations.Add(
                 new UsuarioEntityMapping()
             );
+
             modelBuilder.Configurations.Add(
-                new VentaDetalleEntityMapping()
+                new VentaEntityMapping()
             );
+
             modelBuilder.Configurations.Add(
                 new VentaDetalleEntityMapping()
             );

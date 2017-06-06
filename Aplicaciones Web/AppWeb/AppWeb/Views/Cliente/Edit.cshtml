@@ -1,0 +1,117 @@
+﻿@model AppWeb.Models.ClienteEntity
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<div class="panel panel-default">
+
+    <div class="panel-body">
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset>
+                <legend>Datos</legend>
+                @Html.HiddenFor(model => model.ClienteID)
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Cedula)
+                            </span>
+                            @Html.TextBoxFor(model => model.Cedula, new { @class = "form-control", placeholder = "Cédula" })
+                            @Html.ValidationMessageFor(model => model.Cedula)
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Nombres)
+                            </span>
+                            @Html.TextBoxFor(model => model.Nombres, new { @class = "form-control", placeholder = "Nombres" })
+                            @Html.ValidationMessageFor(model => model.Nombres)
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Apellidos)
+                            </span>
+                            @Html.TextBoxFor(model => model.Apellidos, new { @class = "form-control", placeholder = "Apellidos" })
+                            @Html.ValidationMessageFor(model => model.Apellidos)
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Email)
+                            </span>
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "E - Mail" })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Telefono)
+                            </span>
+                            @Html.TextBoxFor(model => model.Telefono, new { @class = "form-control", placeholder = "Teléfono" })
+                            @Html.ValidationMessageFor(model => model.Telefono)
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <br />
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                @Html.LabelFor(model => model.Direccion)
+                            </span>
+                            @Html.TextBoxFor(model => model.Direccion, new { @class = "form-control", placeholder = "Dirección" })
+                            @Html.ValidationMessageFor(model => model.Direccion)
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <p>
+                    <input type="submit" value="Editar" class="btn btn-danger" />
+                    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+                </p>
+            </fieldset>
+        }
+
+    </div>
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

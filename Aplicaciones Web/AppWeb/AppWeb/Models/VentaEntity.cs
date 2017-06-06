@@ -38,7 +38,7 @@ namespace AppWeb.Models
 
         public virtual ClienteEntity Cliente { get; set; }
 
-        public virtual ObservableCollection<VentaDetalleEntity> VentasDetalles { get; set; }
+        public virtual ICollection<VentaDetalleEntity> VentasDetalles { get; set; }
     }
 
     public class VentaEntityMapping : EntityTypeConfiguration<VentaEntity>
@@ -47,8 +47,7 @@ namespace AppWeb.Models
         {
             this.ToTable("tblVentas");
 
-            HasKey(c => c.VentaID);
-            Property(c => c.VentaID);
+            this.HasKey(c => c.VentaID);
 
         }
     }

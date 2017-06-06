@@ -1,0 +1,79 @@
+﻿@model IEnumerable<AppWeb.Models.ClienteEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de Clientes</h2>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p>
+            @Html.ActionLink("Crear nuevo", "Create", null, new { @class = "btn btn-danger" })
+        </p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClienteID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cedula)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombres)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellidos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClienteID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td class="table-operation">
+                        <a href="@Url.Action("Edit", "Cliente", new { id = item.ClienteID})" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                        <a href="@Url.Action("Details", "Cliente", new { id = item.ClienteID})" class="btn btn-warning">
+                            <i class="glyphicon glyphicon-file"></i>
+                        </a>
+                        <a href="@Url.Action("Delete", "Cliente", new { id = item.ClienteID})" class="btn btn-default">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
