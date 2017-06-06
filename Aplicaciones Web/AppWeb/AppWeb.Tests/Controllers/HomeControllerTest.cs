@@ -26,19 +26,6 @@ namespace AppWeb.Tests.Controllers
         }
 
         [TestMethod]
-        public void About()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.About() as ViewResult;
-
-            // Assert
-            Assert.IsNotNull(result);
-        }
-
-        [TestMethod]
         public void Contact()
         {
             // Arrange
