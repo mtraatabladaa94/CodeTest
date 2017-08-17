@@ -27,6 +27,7 @@ namespace WinFormGraphQL
 
         private async void button1_Click(object sender, EventArgs e)
         {
+
             this.Mensaje = textBox1.Text;
 
             textBox2.Text = await this.RunAsync();
@@ -39,17 +40,23 @@ namespace WinFormGraphQL
 
             var schema = new Schema { Query = new StarWarsQuery() };
 
+
+
+            //var result = await new DocumentExecuter().ExecuteAsync(_ =>
             var result = await new DocumentExecuter().ExecuteAsync(_ =>
             {
+
                 _.Schema = schema;
+
                 _.Query = @"
                 query {
-                  hero {
+                    hero {
                     id
                     name
-                  }
+                    }
                 }
-              ";
+                ";
+
             }).ConfigureAwait(false);
 
             var json = new DocumentWriter(indent: true).Write(result);
@@ -57,7 +64,9 @@ namespace WinFormGraphQL
             this.Mensaje += json;
 
             return this.Mensaje;
+
         }
+
     }
 
     public class Droid

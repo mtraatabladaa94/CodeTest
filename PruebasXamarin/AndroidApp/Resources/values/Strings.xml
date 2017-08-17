@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, App Teipe!</string>
+    <string name="ApplicationName">Teipe App</string>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+      <item name="android:windowNoTitle">true</item>
+      <item name="android:windowActionBar">false</item>
+      <item name="android:colorPrimary">#039be5</item>
+      <item name="android:colorAccent">#01579b</item>
+      <item name="android:statusBarColor">#ff5722</item>
+      <item name="android:textColorPrimary">#FFFFFF</item>
+    </style>
+
+</resources>
